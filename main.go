@@ -5,9 +5,11 @@ import (
 	"fmt"
 	"goethdemo/address"
 	"goethdemo/clientinit"
-	"goethdemo/constractToken"
+	"goethdemo/constract/constractToken"
+	"goethdemo/constractDeploy"
+
 	// "goethdemo/contractCode"
-	"goethdemo/transaction"
+
 	"log"
 	"math"
 	"math/big"
@@ -34,9 +36,9 @@ func main() {
 
 	//获取网络上最新区块信息
 	//transaction.GetTransaction(&client)
-	transaction.TransETH(client, "c6673dc1aad4c7848dd8836fcf8636b37e13dab4aafdd7eb58b60606e097ddeb", "0x0754942A85dF6D15219D51B9d3BF56C0e92CC560")
-
-	
+	// transaction.TransETH(client, "c6673dc1aad4c7848dd8836fcf8636b37e13dab4aafdd7eb58b60606e097ddeb", "0x0754942A85dF6D15219D51B9d3BF56C0e92CC560")
+	//部署测试合约
+	constractDeploy.Deploy(client, "c6673dc1aad4c7848dd8836fcf8636b37e13dab4aafdd7eb58b60606e097ddeb")
 	//获取erc20合约实例
 	erc20Token := constractToken.GetToken(&client, "0x44499312f493F62f2DFd3C6435Ca3603EbFCeeBa")
 	accountAddressStr := "0x3409e0738662C3F5d8eC4ff780bea60C945f8FB2"
