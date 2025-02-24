@@ -9,7 +9,7 @@ contract Store {
   constructor(string memory _version) {
     version = _version;
   }
-
+0x6162630000000000000000000000000000000000000000000000000000000000000000
   function setItem(bytes32 key, bytes32 value) external {
     items[key] = value;
     emit ItemSet(key, value);
